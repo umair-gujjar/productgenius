@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<record id="view_form_todo_task" model = "ir.ui.view">
+<field name = "name">To-do Task Form</field>
+<field name = "model">todo.task</field>
+<field name = "arch" type = "xml">
+
+<form string = "To-do Task">
+<field name = "name" />
+<field name = "is_done" />
+<field name = "active" readonly = "1"
+</form>
+</field>
+</record>
+<act_window id="action_todo_task"
+	name = "To-do Task"
+	res_model = "todo.task"
+	view_mode = "tree,form" />
+
+<menuitem id="menu_todo_task"
+	name = "To-Do Tasks"
+	parent = "mail.mail_feeds"
+	sequence = "20"
+	action = "action_todo_task" />
+</data>
+</openerp>

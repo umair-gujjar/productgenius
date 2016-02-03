@@ -1,0 +1,47 @@
+<openerp>
+    <data>
+       <record id="hr_contract_custom_view_form" model="ir.ui.view">
+            <field name="name">hr_contract_custom_view_form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='wage']" position="after">
+                    <field name="bonus"/>
+                    <field name="loan_and_advance"/>
+                </xpath>
+		<xpath expr="//page[@string='Work Permit']" position="after">
+	    		<page string="REIMBURSEMENT" name="reimbbursment">
+				<group>
+					<field name="medical_opd"/>
+                    			<field name="mobile"/>
+					<field name="fuel_other"/>
+                    			<field name="overtime_food"/>
+					<field name="sr_other"/>
+				</group>
+	    		</page>
+	    	</xpath>
+            </field>
+        </record>
+<!--
+       <record id="hr_contract_custom_view_form_page" model="ir.ui.view">
+            <field name="name">hr_contract_custom_view_form_page</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+		<xpath expr="//page[@string='Work Permit']" position="after">
+	    		<page string="REIMBURSEMENT" name="reimbbursment">
+				<group>
+					<field name="medical_opd"/>
+                    			<field name="mobile"/>
+					<field name="fuel_other"/>
+                    			<field name="overtime_food"/>
+					<field name="sr_other"/>
+				</group>
+	    		</page>
+	    	</xpath>
+            </field>
+        </record>
+-->
+    </data>
+</openerp>
